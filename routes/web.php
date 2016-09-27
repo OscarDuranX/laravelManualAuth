@@ -15,13 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hola', function () {
-    return view('home');
-});
+Route::get('/home', 'HomeController@index');
 
 Route::get('/login', function () {
     return view('auth.login');
 });
+
+Route::get('/login', 'LoginController@Login');
 
 Route::get('/register', function () {
     return view('auth.register');
