@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use PDO;
 
 
@@ -24,10 +25,16 @@ class HomeController extends Controller
 //        $query->execute();
 //        $row = $query->fetch();
 //        dd($row);
+//        Middleware
 
-        $user = User::find(1);
-        return view('home')
-            ->withUser($user);
+
+
+            $user = User::find(1);
+            return view('home')
+                ->withUser($user);
+
+
+
 
 //        return view('home',['user' => $user]);
 //        return view('home',compact($user));
