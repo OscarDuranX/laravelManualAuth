@@ -8,20 +8,28 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class Usuari{
-    public $name,$sn1,$sn2;
-}
+
 class HomeController extends Controller
 {
     public function index()
     {
 
-        $user = new Usuari();
-        $user->name="Sergi";
-        $user->sn1="terror";
-        $user->sn2="possi";
+        $user = new \stdClass();
+        $user->name= "Oscar";
+
+
+//        $pdo = new PDO('sqlite:/home/oscar/Code/laravelManualAuth/database/database.sqlite');
+//        $query = $pdo->prepare('SELECT * FROM users WHERE id=1');
+//        $query->execute();
+//        $row = $query->fetch();
+//        dd($row);
+
+
 
         return view('home')
             ->withUser($user);
+
+//        return view('home',['user' => $user]);
+//        return view('home',compact($user));
     }
 }
