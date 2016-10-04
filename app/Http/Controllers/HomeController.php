@@ -35,7 +35,7 @@ class HomeController extends Controller
 
 
 
-            $user = User::find(1);
+            $user = Auth::user(1);
             return view('home')
                 ->withUser($user);
 
