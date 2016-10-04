@@ -27,3 +27,4 @@ Route::get('/login', 'LoginController@Login');
 Route::get('/register', function () {
     return view('auth.register');
 });
+
