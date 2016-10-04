@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use PDO;
 
 
 class HomeController extends Controller
@@ -14,8 +15,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        $user = new \stdClass();
-        $user->name= "Oscar";
+//        $user = new \stdClass();
+//        $user->name= "Oscar";
 
 
 //        $pdo = new PDO('sqlite:/home/oscar/Code/laravelManualAuth/database/database.sqlite');
@@ -24,8 +25,7 @@ class HomeController extends Controller
 //        $row = $query->fetch();
 //        dd($row);
 
-
-
+        $user = User::find(1);
         return view('home')
             ->withUser($user);
 
