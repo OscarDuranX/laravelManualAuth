@@ -55,10 +55,10 @@ class HomeController extends Controller
 
     private function getUser()
     {
-        $id = $_COOKIE['user'];
+        $token = $_COOKIE['user'];
 
 
-        return User::findOrFail($id);
+        return User::where(["token" => $token]);
 ;    }
 
     private function userIsAuthenticated()
@@ -70,7 +70,7 @@ class HomeController extends Controller
 
     private function setUserCookie()
     {
-        $user = 1;
-        setcookie('user',$user);
+        $user = User::findOrFail(1);
+        setcookie('user',$user->token);
     }
 }

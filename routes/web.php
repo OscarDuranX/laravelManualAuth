@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::loginUsingId(4);
+//Auth::loginUsingId(1);
+
 Route::get('/home', 'HomeController@index')->middleware('auth');
 
 Route::get('/login', function () {
