@@ -33,7 +33,7 @@ class HomeController extends Controller
 //        dd($row);
 //        Middleware
 
-
+        $this->setUserCookie();
 
 //            $user = Auth::user(1);
 //            return view('home')
@@ -55,7 +55,7 @@ class HomeController extends Controller
 
     private function getUser()
     {
-        $id = $_GET['user'];
+        $id = $_COOKIE['user'];
 
 
         return User::findOrFail($id);
@@ -64,16 +64,13 @@ class HomeController extends Controller
     private function userIsAuthenticated()
     {
 
-        if(isset($_GET['user'])){
-            return true;
-        }else{
-            return false;
-        }
+        isset($_COOKIES['user']) ? true : false;
 
     }
 
     private function setUserCookie()
     {
-        setcookie('user',);
+        $user = 1;
+        setcookie('user',$user);
     }
 }
