@@ -35,14 +35,45 @@ class HomeController extends Controller
 
 
 
-            $user = Auth::user(1);
+//            $user = Auth::user(1);
+//            return view('home')
+//                ->withUser($user);
+
+        // Variable d'estat de sessió
+        if($this->userIsAuthenticated()){
+            $user = $this->getUser();
             return view('home')
                 ->withUser($user);
-
-
+        }else{
+            return redirect('login');
+        }
 
 
 //        return view('home',['user' => $user]);
 //        return view('home',compact($user));
+    }
+
+    private function getUser()
+    {
+        $id = $_GET['user'];
+
+
+        return User::findOrFail($id);
+;    }
+
+    private function userIsAuthenticated()
+    {
+
+        if(isset($_GET['user'])){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    private function setUserCookie()
+    {
+        setcookie('user',);
     }
 }
