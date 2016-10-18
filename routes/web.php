@@ -19,13 +19,17 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->middleware('auth');
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+//Route::get('/login', function () {
+//    return view('auth.login');
+//});
 
-Route::get('/login', 'LoginController@Login');
+Route::get('/login', 'LoginController@showLoginForm');
+
+Route::post('/login', 'LoginController@Login');
 
 Route::get('/register', function () {
     return view('auth.register');
 });
+
+
 
