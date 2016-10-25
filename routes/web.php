@@ -31,5 +31,10 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+Route::group(['middleware' => 'manualauth'], function () {
+    Route::get('/tasques', function () {
+        return view('tasques');
+    });
+});
 
 
