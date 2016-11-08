@@ -14,6 +14,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+
+//        $this->app->bind(
+//            \App\ManualAuth\Guard::class, config('manualauth.guard')
+//        );
+
+//        $this->app->bind(
+//            \App\ManualAuth\::class, config('manualauth.guard')
+//        );
+
+
     }
 
     /**

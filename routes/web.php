@@ -25,10 +25,6 @@ use App\User;
 //    return view('auth.login');
 //});
 
-Route::get('/login', 'LoginController@showLoginForm');
-
-//Route::post('/login', 'LoginController@Login');
-
 //Route::get('/register', function () {
 //    return view('auth.register');
 //});
@@ -37,18 +33,21 @@ Route::get('/login', 'LoginController@showLoginForm');
 //    \App\ManualAuth\Guard::class, \App\ManualAuth\ParameterGuard::class
 //);
 
-$this->app->bind(
-    \App\ManualAuth\Guard::class, \App\ManualAuth\CookieGuard::class
-);
+//$this->app->bind(
+//    \App\ManualAuth\Guard::class, \App\ManualAuth\CookieGuard::class
+//);
 
 
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::group(['middleware' => 'manualauth'], function () {
     Route::get('/tasques', function () {
-
         return view('tasques');
     });
 });
-
+Route::get('/login', 'LoginController@showLoginForm');
+Route::post('/login', 'LoginController@login');
 
