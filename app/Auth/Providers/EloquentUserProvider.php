@@ -6,7 +6,7 @@
  * Time: 20:19
  */
 
-namespace App\ManualAuth\UserProviders;
+namespace App\Auth\Providers\UserProviders;
 
 
 use App\User;

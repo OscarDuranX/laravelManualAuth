@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ManualAuth\UserProviders;
+namespace App\Auth\Providers\UserProviders;
 
 /**
  * Created by PhpStorm.
