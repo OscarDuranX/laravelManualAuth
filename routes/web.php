@@ -51,3 +51,5 @@ Route::group(['middleware' => 'manualauth'], function () {
 Route::get('/login', 'LoginController@showLoginForm');
 Route::post('/login', 'LoginController@login');
 
+Route::get('/registre', 'RegistreController@showRegistreForm');
+

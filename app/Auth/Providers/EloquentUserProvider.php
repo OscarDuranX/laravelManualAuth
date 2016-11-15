@@ -6,13 +6,14 @@
  * Time: 20:19
  */
 
-namespace App\Auth\Providers\UserProviders;
+namespace App\Auth\Providers\EloquentUserProvider;
 
 
+use App\Auth\Guards\Guard;
 use App\User;
 use Hash;
 
-class EloquentUserProvider implements UserProvider
+class EloquentUserProvider implements Guard
 {
     public function validate(array $credentials)
     {

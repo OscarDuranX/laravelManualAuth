@@ -1,6 +1,10 @@
 <?php
 namespace App\Auth\Guards;
+
+
+
 use App\Auth\Providers\EloquentUserProvider;
+
 class SessionGuard implements Guard
 {
     protected $provider;

@@ -1,10 +1,7 @@
 <?php
 namespace App\Http\Controllers;
-use App\Auth\Managers\AuthManager;
 use App\ManualAuth\Guard;
 use App\ManualAuth\UserProviders\UserProvider;
-use App\User;
-use Hash;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
